@@ -41,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@color/design_default_color_on_primary"
-                android:text="Quiz 1"
+                android:text="Logo Quiz"
                 android:onClick="quizOne"
                 android:textSize="18sp"
                 android:textColor="@android:color/white"/>
@@ -52,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@color/design_default_color_on_primary"
-                android:text="Quiz 2"
+                android:text="Language Quiz"
                 android:onClick="quizTwo"
                 android:textSize="18sp"
                 android:textColor="@android:color/white"/>
@@ -63,7 +63,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@color/design_default_color_on_primary"
-                android:text="Quiz 3"
+                android:text="Class Quiz"
                 android:onClick="quizThree"
                 android:textSize="18sp"
                 android:textColor="@android:color/white"/>

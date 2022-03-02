@@ -24,12 +24,16 @@ public class QuizSelect extends AppCompatActivity {
 
     public void quizTwo(View view) {
         Intent intent = new Intent(QuizSelect.this, QuizTwo.class);
+        String en = getIntent().getStringExtra("keyenterName");
+        intent.putExtra("keyenterName", en);
         startActivity(intent);
         finish();
     }
 
     public void quizThree(View view) {
         Intent intent = new Intent(QuizSelect.this, QuizThree.class);
+        String en = getIntent().getStringExtra("keyenterName");
+        intent.putExtra("keyenterName", en);
         startActivity(intent);
         finish();
     }

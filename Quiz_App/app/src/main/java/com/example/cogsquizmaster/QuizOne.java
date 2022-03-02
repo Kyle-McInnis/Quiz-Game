@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
@@ -24,18 +25,17 @@ public class QuizOne extends AppCompatActivity {
     TextView tvResult;
     // An ImageView for showing an image in question
     ImageView ivShowImage;
-    // Instantiate a HashMap to store technology names and corresponding image resource ids
+    // HashMap to store technology names and images together
     HashMap<String, Integer> map = new HashMap<>();
     // An ArrayList for storing technology names only
     ArrayList<String> techList = new ArrayList<>();
-    // Declare an index variable. We'll keep incrementing it as the quiz proceeds to
-    // the next questions.
+    // Declare an index variable. We'll keep incrementing it as the quiz proceeds to the next questions
     int index;
-    // Declare four button object references for displaying four options to choose from
+
     Button btn1, btn2, btn3, btn4;
-    // A TextView for displaying points
+
     TextView tvPoints;
-    // An integer variable to store points
+
     int points;
     // A CountDownTimer object reference
     CountDownTimer countDownTimer;
@@ -184,6 +184,9 @@ public class QuizOne extends AppCompatActivity {
 
     public void answerSelected(View view) {
 
+        MediaPlayer correct = MediaPlayer.create(QuizOne.this,R.raw.correct);
+        MediaPlayer wrong = MediaPlayer.create(QuizOne.this,R.raw.wrong);
+
         view.setBackgroundColor(Color.parseColor("#17243e"));
 
         btn1.setEnabled(false);
@@ -198,8 +201,11 @@ public class QuizOne extends AppCompatActivity {
             points++;
             tvPoints.setText(points + " / " + techList.size());
             tvResult.setText("Correct");
+            correct.start();
+
         } else {
             tvResult.setText("Wrong");
+            wrong.start();
         }
     }
 }
